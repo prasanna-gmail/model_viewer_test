@@ -1,0 +1,24 @@
+<model-viewer src="anatomy_of_the_airways.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    poster="poster.webp" shadow-intensity="1" camera-orbit="151.4deg 81.62deg 0.2912m" field-of-view="12deg">
+    <button class="Hotspot" slot="hotspot-1" data-surface="5 0 1020 1000 995 0.640 0.061 0.299"
+        data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Os hyoideum</div>
+    </button>
+    <button class="Hotspot" slot="hotspot-3" data-surface="3 0 4328 11407 4329 0.045 0.498 0.457"
+        data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Cartilagines trachealis</div>
+    </button>
+    <button class="Hotspot" slot="hotspot-5" camera-orbit="151.4deg 81.62deg 0.2912m"
+        data-surface="2 0 6690 11704 52 0.402 0.525 0.073" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">bottom back</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>

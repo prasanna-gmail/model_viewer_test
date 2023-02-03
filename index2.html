@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles1.css" rel="stylesheet" />
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+</head>
+
+<body>
+    <!-- <model-viewer> HTML element -->
+
+    <!-- <model-viewer field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg"
+        min-camera-orbit="auto auto 5%" poster="./assets/ThorAndTheMidgardSerpent.webp" ar> -->
+
+    <model-viewer id="hotspot-camera-view-demo" src="anatomy_of_the_airways.glb" alt="Thor and the Midgard Serpent"
+        touch-action="none" ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
+        shadow-intensity="1" camera-target="0.15m -497.32m 43.89m" camera-orbit="12.29deg 73.6deg 0.9971m"
+        field-of-view="22.37deg" interpolation-decay="200">
+
+
+
+
+        <button class="view-button" slot="hotspot-1" data-orbit="2.715deg 91.14deg 0.2912m"
+            data-target="0.13m -497.26m 43.88m" data-normal="-0.5829775m 0.2863482m -0.7603565m"
+            data-surface="5 0 1020 1000 995 0.640 0.061 0.299" data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">Os hyoideum</div>
+        </button>
+        <button class="view-button" slot="hotspot-1" data-position="0.1989m 0.16711m -0.0749m"
+            data-normal="0.7045857m 0.1997957m -0.6809117m" data-orbit="-40.11996deg 88.17818deg 0.07090651m"
+            data-target="0.2011831m 0.1398312m -0.07917573m">
+            Catapult
+        </button>
+        <button class="view-button" slot="hotspot-3" data-orbit="-4.983deg 98.23deg 0.2912m"
+            data-target="0.14m -497.31m 43.86m" data-surface="3 0 4328 11407 4329 0.045 0.498 0.457"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">Cartilagines trachealis</div>
+        </button>
+
+        <button class="view-button" slot="hotspot-5" data-orbit="99.38deg 95.94deg 0.945m"
+            data-target="0.19m -497.45m 43.84m" data-surface="2 0 6690 11704 52 0.402 0.525 0.073"
+            data-visibility-attribute="visible">
+            <div class="HotspotAnnotation">bottom back</div>
+        </button>
+
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+        <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div>
+    </model-viewer>
+
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+    <script type="module">
+        const modelViewer2 = document.querySelector("#hotspot-camera-view-demo");
+        const annotationClicked = (annotation) => {
+            let dataset = annotation.dataset;
+            modelViewer2.cameraTarget = dataset.target;
+            // Initial Camera Position = camera-orbit
+            modelViewer2.cameraOrbit = dataset.orbit;
+            modelViewer2.fieldOfView = '0deg';
+        }
+
+        modelViewer2.querySelectorAll('button').forEach((hotspot) => {
+            console.log("pkp:  ~ file: index2.html:48 ~ modelViewer2.querySelectorAll ~ hotspot", hotspot)
+            hotspot.addEventListener('click', () => annotationClicked(hotspot));
+        });
+    </script>
+
+
+    <style type="text/css">
+        .view-buttonX {
+            background: #fff;
+            border: none;
+            border-radius: 32px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            color: rgba(0, 0, 0, 0.8);
+            display: block;
+            font-family: Futura, Helvetica Neue, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            max-width: 128px;
+            overflow-wrap: break-word;
+            padding: 0.5em 1em;
+            position: absolute;
+            width: max-content;
+            height: max-content;
+            transform: translate3d(-50%, -50%, 0);
+        }
+    </style>
+
+
+</body>
+
+</html>
