@@ -1,7 +1,7 @@
 <model-viewer src="anatomy_of_the_airways.glb" ar-modes="webxr scene-viewer quick-look" camera-controls
     poster="poster.webp" shadow-intensity="1" id="hotspot-camera-view-demo" alt="Thor and the Midgard Serpent"
     touch-action="none" interpolation-decay="200" camera-target="0.15m -497.32m 43.89m"
-    camera-orbit="-13deg 110.2deg 0.2912m" field-of-view="12deg">
+    camera-orbit="-9.773deg 86.6deg 0.2912m" field-of-view="12deg">
     <button class="Hotspot" slot="hotspot-4" data-surface="5 0 1020 1000 995 0.640 0.061 0.299"
         data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Os hyoideum</div>
@@ -10,9 +10,14 @@
         data-visibility-attribute="visible">
         <div class="HotspotAnnotation">Cartilago thyroidea</div>
     </button>
-    <button class="Hotspot" slot="hotspot-6" data-target="0.15m -497.32m 43.89m" data-orbit="-13deg 110.2deg 0.2912m"
-        data-surface="5 0 1214 1353 1355 0.427 0.354 0.219" data-visibility-attribute="visible">
-        6<div class="HotspotAnnotation">Cricoidea</div>
+    <button class="Hotspot" slot="hotspot-6" data-surface="5 0 1214 1353 1355 0.427 0.354 0.219"
+        data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Cricoidea</div>
+    </button>
+    <button class="Hotspot" slot="hotspot-3" camera-target="0.15m -497.32m 43.89m"
+        camera-orbit="-9.773deg 86.6deg 0.2912m" data-surface="3 0 11408 4386 13110 0.553 0.048 0.399"
+        data-visibility-attribute="visible">
+        3<div class="HotspotAnnotation">Cartilagines trachealis</div>
     </button>
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>

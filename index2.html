@@ -13,30 +13,45 @@
 
 <body>
     <!-- <model-viewer> HTML element -->
-
-    <!-- <model-viewer field-of-view="45deg" min-field-of-view="25deg" max-field-of-view="45deg"
-        min-camera-orbit="auto auto 5%" poster="./assets/ThorAndTheMidgardSerpent.webp" ar> -->
-
     <model-viewer id="hotspot-camera-view-demo" src="anatomy_of_the_airways.glb" alt="Thor and the Midgard Serpent"
         touch-action="none" ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
-        shadow-intensity="1" camera-target="0.15m -497.32m 43.89m" camera-orbit="12.29deg 73.6deg 0.9971m"
-        field-of-view="22.37deg" interpolation-decay="200">
-        <button class="view-button" slot="hotspot-4" data-target="0.13m -497.26m 43.88m"
+        shadow-intensity="1" camera-target="0.15m -497.32m 43.89m" camera-orbit="40.78deg 76.05deg 0.7145m"
+        field-of-view="15.06deg" interpolation-decay="200">
+        <button class="Hotspot" slot="hotspot-4" data-target="0.13m -497.26m 43.88m"
             data-orbit="2.715deg 91.14deg 0.2912m" data-normal="-0.5829775m 0.2863482m -0.7603565m"
             data-surface="5 0 1020 1000 995 0.640 0.061 0.299" data-visibility-attribute="visible">
             4 <div class="HotspotAnnotation">Os hyoideum</div>
         </button>
-        <button class="view-button" slot="hotspot-5" data-target="0.15m -497.32m 43.89m"
+        <button class="Hotspot" slot="hotspot-5" data-target="0.15m -497.32m 43.89m"
             data-orbit="-13.83deg 110.7deg 0.2912m" data-surface="5 0 2843 1869 2844 0.075 0.600 0.325"
             data-visibility-attribute="visible">
             5<div class="HotspotAnnotation">Cartilago thyroidea</div>
         </button>
 
-        <button class="view-button" slot="hotspot-6" data-target="0.15m -497.32m 43.89m"
-            data-orbit="-13.69deg 107.2deg 0.2912m" data-surface="3 0 5012 15156 5039 0.537 0.020 0.443"
+        <button class="Hotspot" slot="hotspot-6" data-target="0.15m -497.32m 43.89m"
+            data-orbit="-13deg 110.2deg 0.2912m" data-surface="5 0 1214 1353 1355 0.427 0.354 0.219"
             data-visibility-attribute="visible">
             6<div class="HotspotAnnotation">Cricoidea</div>
         </button>
+
+        <button class="Hotspot" slot="hotspot-3" camera-target="0.15m -497.32m 43.89m"
+            camera-orbit="-9.773deg 86.6deg 0.2912m" data-surface="3 0 11408 4386 13110 0.553 0.048 0.399"
+            data-visibility-attribute="visible">
+            3<div class="HotspotAnnotation">Cartilagines trachealis</div>
+        </button>
+
+        <button class="Hotspot" slot="hotspot-1" data-target="0.15m -497.32m 43.89m"
+            data-orbit="40.41deg 71.58deg 0.3791m" data-surface="2 0 243 12099 12100 0.481 0.025 0.494"
+            data-visibility-attribute="visible">
+            1<div class="HotspotAnnotation">Alveoli</div>
+        </button>
+
+        <button class="Hotspot" slot="hotspot-2" data-target="0.18m -497.33m 43.90m"
+            data-orbit="-8.488deg 90.53deg 0.3791m" data-surface="2 0 869 1667 867 0.546 0.094 0.360"
+            data-visibility-attribute="visible">
+            2<div class="HotspotAnnotation">Smooth muscle fibers</div>
+        </button>
+
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
@@ -79,7 +94,7 @@
 
 
     <style type="text/css">
-        .view-button {
+        .Hotspot {
             background: #484848;
             border: none;
             border-radius: 50%;
@@ -101,7 +116,7 @@
             transition: all 0.2s;
         }
 
-        .view-button:hover {
+        .Hotspot:hover {
             color: #56adff;
             box-shadow: 0 0 10px #56adff;
             border-color: #56adff;
