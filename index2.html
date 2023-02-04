@@ -46,10 +46,14 @@
             1<div class="HotspotAnnotation">Alveoli</div>
         </button>
 
-        <button class="Hotspot" slot="hotspot-2" data-target="0.18m -497.33m 43.90m"
-            data-orbit="-8.696deg 87.75deg 0.3791m" data-view="12deg" data-surface="2 0 869 1667 867 0.546 0.094 0.360"
+        <!-- 
+        camera-orbit="411deg 64.09deg 1.077m" field-of-view="12deg" camera-target="0.05m -497.4m 43.77m" 
+        camera-orbit="542deg 90.47deg 1.077m" field-of-view="12deg" camera-target="0.12m -497.4m 43.81m"
+    -->
+        <button class="Hotspot" slot="hotspot-2" data-orbit="221.9deg 74.43deg 0.7401m" field-of-view="12deg"
+            data-target="0.56m -497.5m 44.31m" data-surface="2 0 6322 8803 8804 0.263 0.648 0.090"
             data-visibility-attribute="visible">
-            2<div class="HotspotAnnotation">Smooth muscle fibers</div>
+            2<div class="HotspotAnnotation">ss</div>
         </button>
 
         <div class="progress-bar hide" slot="progress-bar">
@@ -77,8 +81,8 @@
             modelViewer2.cameraTarget = dataset.target;
             // Initial Camera Position = camera-orbit
             modelViewer2.cameraOrbit = dataset.orbit;
-            // modelViewer2.fieldOfView = '0deg';
-            modelViewer2.fieldOfView = dataset.view;
+            modelViewer2.fieldOfView = '0deg';
+            // modelViewer2.fieldOfView = dataset.view;
             modelViewer2.querySelectorAll('button').forEach((hotspot) => {
                 hotspot.classList.remove('active')
             })
