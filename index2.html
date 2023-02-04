@@ -21,35 +21,22 @@
         touch-action="none" ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp"
         shadow-intensity="1" camera-target="0.15m -497.32m 43.89m" camera-orbit="12.29deg 73.6deg 0.9971m"
         field-of-view="22.37deg" interpolation-decay="200">
-        <button class="view-button" slot="hotspot-1" data-orbit="2.715deg 91.14deg 0.2912m"
-            data-target="0.13m -497.26m 43.88m" data-normal="-0.5829775m 0.2863482m -0.7603565m"
-            data-surface="5 0 1020 1000 995 0.640 0.061 0.299" data-visibility-attribute="visible">0
-            <div class="HotspotAnnotation">Os hyoideum</div>
+        <button class="view-button" slot="hotspot-4" data-target="0.13m -497.26m 43.88m"
+            data-orbit="2.715deg 91.14deg 0.2912m" data-normal="-0.5829775m 0.2863482m -0.7603565m"
+            data-surface="5 0 1020 1000 995 0.640 0.061 0.299" data-visibility-attribute="visible">
+            4 <div class="HotspotAnnotation">Os hyoideum</div>
         </button>
-        <!-- <button class="view-button" slot="hotspot-1" data-position="0.1989m 0.16711m -0.0749m"
-            data-normal="0.7045857m 0.1997957m -0.6809117m" data-orbit="-40.11996deg 88.17818deg 0.07090651m"
-            data-target="0.2011831m 0.1398312m -0.07917573m">
-            Catapult
-        </button> -->
-        <button class="view-button" slot="hotspot-3" data-orbit="-4.983deg 98.23deg 0.2912m"
-            data-target="0.14m -497.31m 43.86m" data-surface="3 0 4328 11407 4329 0.045 0.498 0.457"
+        <button class="view-button" slot="hotspot-5" data-target="0.15m -497.32m 43.89m"
+            data-orbit="-13.83deg 110.7deg 0.2912m" data-surface="5 0 2843 1869 2844 0.075 0.600 0.325"
             data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Cartilagines trachealis</div>
+            5<div class="HotspotAnnotation">Cartilago thyroidea</div>
         </button>
 
-        <button class="view-button" slot="hotspot-5" data-orbit="99.38deg 95.94deg 0.945m"
-            data-target="0.19m -497.45m 43.84m" data-surface="2 0 6690 11704 52 0.402 0.525 0.073"
-            data-visibility-attribute="visible">1
-            <div class="HotspotAnnotation">bottom back</div>
-        </button>
-
-        <button class="Hotspot" slot="hotspot-6" data-orbit="854.3deg 73.45deg 0.2912m"
-            data-target="0.20m -497.33m 43.86m" data-surface="2 0 12011 14835 1857 0.494 0.326 0.180"
+        <button class="view-button" slot="hotspot-6" data-target="0.15m -497.32m 43.89m"
+            data-orbit="-13.69deg 107.2deg 0.2912m" data-surface="3 0 5012 15156 5039 0.537 0.020 0.443"
             data-visibility-attribute="visible">
-            <div class="HotspotAnnotation">Smooth muscle fibers</div>
+            6<div class="HotspotAnnotation">Cricoidea</div>
         </button>
-
-
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
@@ -71,40 +58,55 @@
         const modelViewer2 = document.querySelector("#hotspot-camera-view-demo");
         const annotationClicked = (annotation) => {
             let dataset = annotation.dataset;
-            console.log("pkp:  ~ file: index2.html:74 ~ annotationClicked ~ dataset", dataset)
             modelViewer2.cameraTarget = dataset.target;
             // Initial Camera Position = camera-orbit
             modelViewer2.cameraOrbit = dataset.orbit;
             modelViewer2.fieldOfView = '0deg';
+            modelViewer2.querySelectorAll('button').forEach((hotspot) => {
+                hotspot.classList.remove('active')
+            })
+            annotation.classList.toggle('active');
+
+            console.log(annotation);
         }
 
         modelViewer2.querySelectorAll('button').forEach((hotspot) => {
             console.log("pkp:  ~ file: index2.html:48 ~ modelViewer2.querySelectorAll ~ hotspot", hotspot)
             hotspot.addEventListener('click', () => annotationClicked(hotspot));
+
         });
     </script>
 
 
     <style type="text/css">
-        /* .view-button {
-            background: #fff;
+        .view-button {
+            background: #484848;
             border: none;
-            border-radius: 32px;
+            border-radius: 50%;
             box-sizing: border-box;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-            color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 4px rgba(85, 85, 85, 0.25);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ffffffb9;
             display: block;
             font-family: Futura, Helvetica Neue, sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            max-width: 128px;
+            /* max-width: 128px; */
             overflow-wrap: break-word;
-            padding: 0.5em 1em;
+            padding: 0;
             position: absolute;
-            width: max-content;
-            height: max-content;
+            width: 22px;
+            height: 22px;
             transform: translate3d(-50%, -50%, 0);
-        } */
+            transition: all 0.2s;
+        }
+
+        .view-button:hover {
+            color: #56adff;
+            box-shadow: 0 0 10px #56adff;
+            border-color: #56adff;
+
+        }
     </style>
 
 
